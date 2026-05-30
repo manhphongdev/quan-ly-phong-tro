@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import MainLayout from './components/MainLayout';
+import MainLayout from './shared/components/MainLayout';
 import DashboardOverview from './pages/DashboardOverview';
 
 const placeholderPages = {
