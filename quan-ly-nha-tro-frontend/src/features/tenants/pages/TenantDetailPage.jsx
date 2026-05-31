@@ -2,14 +2,17 @@ import React from 'react';
 import { Card, Badge, Alert } from 'react-bootstrap';
 import { ArrowLeft, Info } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { mockTenants } from './TenantsListPage';
+import tenantsList from '../services/tenantsList';
+import IdentityInfoCard from '../components/IdentityInfoCard';
+import RoomInfoCard from '../components/RoomInfoCard';
+import EmergencyContactCard from '../components/EmergencyContactCard';
 
 function TenantDetailPage() {
     const navigate = useNavigate();
     const { id } = useParams();
 
 
-    const baseTenant = mockTenants.find(t => t.id === parseInt(id));
+    const baseTenant = tenantsList.find(t => t.id === parseInt(id));
 
 
     if (!baseTenant) {
@@ -80,67 +83,13 @@ function TenantDetailPage() {
 
 
                         <div className="col-12 col-lg-8">
-
-                            <div className="mb-5">
-                                <h6 className="fw-bold mb-4" style={{ color: '#4f46e5', fontSize: '16px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                                    THÔNG TIN CÁ NHÂN
-                                </h6>
-                                <div className="row g-4">
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Họ và tên</p>
-                                        <p className="fw-medium mb-0" style={{ fontSize: '20px', color: '#0f172a' }}>{tenant.name}</p>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Số CCCD</p>
-                                        <p className="fw-medium mb-0" style={{ fontSize: '20px', color: '#0f172a' }}>{tenant.cccd}</p>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Số điện thoại</p>
-                                        <p className="fw-medium mb-0" style={{ fontSize: '20px', color: '#0f172a' }}>{tenant.phone}</p>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Ngày sinh</p>
-                                        <p className="fw-medium mb-0" style={{ fontSize: '20px', color: '#0f172a' }}>{tenant.dob}</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <IdentityInfoCard tenant={tenant} />
                             <hr className="my-5" style={{ borderColor: '#e2e8f0' }} />
-
-
-                            <div className="mb-5">
-                                <h6 className="fw-bold mb-4" style={{ color: '#4f46e5', fontSize: '16px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                                    THÔNG TIN CƯ TRÚ
-                                </h6>
-                                <div className="row g-4">
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Phòng đang ở</p>
-                                        <p className="fw-bold mb-0" style={{ fontSize: '22px', color: '#4f46e5' }}>{tenant.room}</p>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p className="text-muted mb-1" style={{ fontSize: '16px' }}>Quê quán</p>
-                                        <p className="fw-medium mb-0" style={{ fontSize: '20px', color: '#0f172a' }}>{tenant.hometown}</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
+                            <RoomInfoCard tenant={tenant} />
                             <hr className="my-5" style={{ borderColor: '#e2e8f0' }} />
-
-
-                            <div>
-                                <h6 className="fw-bold mb-4" style={{ color: '#4f46e5', fontSize: '16px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                                    LIÊN HỆ KHẨN CẤP
-                                </h6>
-                                <div className="p-4 rounded" style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                                    <p className="mb-2" style={{ fontSize: '18px', color: '#475569' }}>
-                                        Người thân: <strong style={{ color: '#0f172a' }}>{tenant.emergencyName}</strong>
-                                    </p>
-                                    <p className="mb-0" style={{ fontSize: '18px', color: '#475569' }}>
-                                        SĐT: <strong style={{ color: '#0f172a' }}>{tenant.emergencyPhone}</strong>
-                                    </p>
-                                </div>
-                            </div>
-
+                            
+                            <EmergencyContactCard tenant={tenant} />
                         </div>
                     </div>
                 </Card.Body>
