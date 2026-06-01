@@ -3,7 +3,7 @@ import './Sidebar.css'
 import {CarFront, Grid3X3, LayoutDashboard, Users,} from 'lucide-react';
 
 const menuItems = [
-    {to: '/dashboard', label: 'Tổng quan', icon: LayoutDashboard},
+    {to: '/project-overview', label: 'Tổng quan', icon: LayoutDashboard},
     {to: '/rooms', label: 'Lưới phòng', icon: Grid3X3},
     {to: '/tenants', label: 'Cư dân', icon: Users},
     {to: '/vehicles', label: 'Phương tiện', icon: CarFront},

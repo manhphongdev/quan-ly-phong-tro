@@ -5,9 +5,13 @@ import TenantsListPage from "./features/tenants/pages/TenantsListPage.jsx";
 import TenantDetailPage from "./features/tenants/pages/TenantDetailPage.jsx";
 import RoomsPage from "./features/rooms/pages/RoomsPage.jsx";
 import RoomDetailPage from "./features/rooms/pages/RoomDetailPage.jsx";
+import BuildingOverview from "./pages/ProjectOverviewContent.jsx";
+import VehiclesManagement from "./pages/VehiclesManagement.jsx";
 
 const appRoutes = [
     {path: "dashboard", element: <DashboardOverview/>},
+    {path: "project-overview", element: <BuildingOverview/>},
+    {path: "vehicles", element: <VehiclesManagement/>},
     {path: "rooms", element: <RoomsPage></RoomsPage>},
     {path: "rooms/:id", element: <RoomDetailPage/>},
     {path: "tenants", element: <TenantsListPage/>},
