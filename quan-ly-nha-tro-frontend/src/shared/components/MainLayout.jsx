@@ -5,7 +5,7 @@ function MainLayout() {
     return (
         <div className="d-flex">
             <Sidebar/>
-            <main className="flex-grow-1 p-4">
+            <main className="main-content flex-grow-1 p-4">
                 <Outlet/>
             </main>
         </div>

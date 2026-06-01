@@ -1,0 +1,10 @@
+body {
+    min-width: 320px;
+    margin: 0;
+    background: #f5f6fb;
+}
+
+.main-content {
+    min-height: 100svh;
+    background: #f5f6fb;
+}
