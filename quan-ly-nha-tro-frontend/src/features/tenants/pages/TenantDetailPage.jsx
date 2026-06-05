@@ -32,22 +32,10 @@ function TenantDetailPage() {
     const tenant = {
         ...baseTenant,
         initials: getInitials(baseTenant.name),
-        cccd: '0012' + Math.floor(10000000 + Math.random() * 90000000),
-        dob: '15/05/1998',
-        hometown: 'Hà Nội',
-        emergencyName: 'Nguyễn Văn B',
-        emergencyPhone: '0912.333.444'
     };
 
     return (
         <div className="tenant-detail-page p-4 p-md-5">
-
-            <Alert className="d-flex align-items-center gap-2 mb-4 border-0" style={{ backgroundColor: '#e0e7ff', color: '#3730a3', borderRadius: '8px' }}>
-                <div className="rounded-circle d-flex align-items-center justify-content-center text-white" style={{ backgroundColor: '#4f46e5', width: '20px', height: '20px' }}>
-                    <Info size={14} />
-                </div>
-                <span style={{ fontSize: '15px' }}>Quyền truy cập: <strong className="text-decoration-underline" style={{ cursor: 'pointer' }}>Quản lý</strong>. Bạn hiện đang ở chế độ <strong>CHỈ XEM</strong>. Một số thay đổi sẽ không thể thực hiện.</span>
-            </Alert>
 
             <Card className="shadow-sm border-0" style={{ borderRadius: '12px', border: '1px solid #e2e8f0' }}>
                 <Card.Body className="p-4 p-md-5">

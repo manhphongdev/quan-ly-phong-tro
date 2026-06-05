@@ -34,13 +34,6 @@ function TenantsListPage() {
 
     return (
         <div className="tenants-list-page p-4">
-            <Alert className="d-flex align-items-center gap-2 mb-4 border-0" style={{ backgroundColor: '#e0e7ff', color: '#3730a3', borderRadius: '8px' }}>
-                <div className="rounded-circle d-flex align-items-center justify-content-center text-white" style={{ backgroundColor: '#4f46e5', width: '20px', height: '20px' }}>
-                    <Info size={14} />
-                </div>
-                <span style={{ fontSize: '15px' }}>Quyền truy cập: <strong className="text-decoration-underline" style={{ cursor: 'pointer' }}>Quản lý</strong>. Bạn hiện đang ở chế độ <strong>CHỈ XEM</strong>. Một số thay đổi sẽ không thể thực hiện.</span>
-            </Alert>
-
             <style>
                 {`
                     .tenant-row {
