@@ -1,4 +1,4 @@
-import {useMemo, useState} from 'react';
+import {useState} from 'react';
 import {Search} from 'lucide-react';
 import {Button, Form, InputGroup} from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
@@ -24,16 +24,14 @@ function RoomsPage() {
     const [activeFilter, setActiveFilter] = useState('Tất cả');
     const [searchTerm, setSearchTerm] = useState('');
 
-    const filteredRooms = useMemo(() => {
-        const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
-        return roomsList.filter((room) => {
-            const matchesFilter = activeFilter === 'Tất cả' || room.status === activeFilter;
-            const matchesSearch = !normalizedSearchTerm || room.code.toLowerCase().includes(normalizedSearchTerm);
+    const filteredRooms = roomsList.filter((room) => {
+        const matchesFilter = activeFilter === 'Tất cả' || room.status === activeFilter;
+        const matchesSearch = !normalizedSearchTerm || room.code.toLowerCase().includes(normalizedSearchTerm);
 
-            return matchesFilter && matchesSearch;
-        });
-    }, [activeFilter, searchTerm]);
+        return matchesFilter && matchesSearch;
+    });
 
     const roomsByFloor = groupRoomsByFloor(filteredRooms);
 
